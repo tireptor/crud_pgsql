@@ -1,0 +1,35 @@
+﻿<Window x:Class="Crud_Pgsql.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crud_Pgsql"
+        mc:Ignorable="d"
+        Title="Gestion contact" Height="414.8" Width="431.675">
+    <Grid RenderTransformOrigin="0.561,0.5" Margin="10,10,4.4,-10.2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="62*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="148,7,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="TextName"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="83,7,0,0" VerticalAlignment="Top" Height="26" Width="37"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="148,126,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="TextAdresse"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="148,42,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="TextPrenom"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="148,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Name="TextTelephone"/>
+        <Label Content="Adresse" HorizontalAlignment="Left" Margin="83,122,0,0" VerticalAlignment="Top" Height="26" Width="51"/>
+        <Label Content="Prénom" HorizontalAlignment="Left" Margin="83,38,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.021,-0.5" Height="26" Width="51"/>
+        <Label Content="Téléphone" HorizontalAlignment="Left" Margin="83,79,0,0" VerticalAlignment="Top" Height="26" Width="64"/>
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top" Width="75" Click="ClicAddPerson" Height="19"/>
+        <Button Content="Modifier" HorizontalAlignment="Left" Margin="90,154,0,0" VerticalAlignment="Top" Width="75" Height="19"/>
+        <Button Content="Effacer" HorizontalAlignment="Left" Margin="170,154,0,0" VerticalAlignment="Top" Width="75" Click="ClicDelete" Name="BtnEffacer" Height="19"/>
+        <DataGrid HorizontalAlignment="Left" Height="188" Margin="10,176,0,0" VerticalAlignment="Top" Width="391" SelectionChanged="DataGrid_SelectionChanged" Name="TablePersonne">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" IsReadOnly="True" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="nom" IsReadOnly="True" Binding="{Binding Path=nom}"/>
+                <DataGridTextColumn Header="prenom" IsReadOnly="True" Binding="{Binding Path=prenom}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="249,154,0,0" VerticalAlignment="Top" Width="75" Click="ClicRefreshPerson" Name="BtnRefresh" Height="19" RenderTransformOrigin="-3.072,0.632"/>
+
+    </Grid>
+</Window>
+    
